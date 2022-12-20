@@ -44,6 +44,7 @@ function draw() {
   for (fruit of persimmon) {
     fruit.touch();
     fruit.update();
+    fruit.ground();
     fruit.show();
   }
 
