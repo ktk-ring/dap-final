@@ -34,9 +34,9 @@ function draw() {
     for (; x <= width / 2 + 125; x += w) {
       if (random() < 0.3) {
         if (random() < 0.75) {
-          persimmon.push(new Fruits(x, y, w, random(20, 150)));
+          persimmon.push(new Fruits(x, y, w, random(20, 250)));
         } else {
-          persimmon.push(new Riped(x, y, w, random(20, 150)));
+          persimmon.push(new Riped(x, y, w, random(20, 250)));
         }
       }
     }
