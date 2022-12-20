@@ -1,5 +1,5 @@
 let tree;
-let fruitC;
+let fruitCanvas;
 
 let x, y, w;
 
@@ -33,9 +33,12 @@ function draw() {
 
   for (; y < 275; y += w) {
     for (; x <= 325; x += w) {
-      if (random() < 0.5) {
-        fill(255, 165, 0);
-        persimmon.push(new Fruits(x, y, w, random(20, 150)));
+      if (random() < 0.3) {
+        if (random() < 0.75) {
+          persimmon.push(new Fruits(x, y, w, random(20, 150)));
+        } else {
+          persimmon.push(new Riped(x, y, w, random(20, 150)));
+        }
       }
     }
     x = 50;
@@ -53,6 +56,4 @@ function draw() {
   stroke(0);
   line(mouseX, mouseY, mouseX - 100, mouseY - 250);
   pop();
-
-
 }
