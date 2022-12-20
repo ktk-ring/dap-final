@@ -31,12 +31,6 @@ function draw() {
 
   image(fruitCanvas, 0, 0);
 
-  push();
-  strokeWeight(10);
-  stroke(0);
-  line(mouseX, mouseY, mouseX - 10, mouseY - 100);
-  pop();
-
   for (; y < 275; y += w) {
     for (; x <= 325; x += w) {
       if (random() < 0.5) {
@@ -51,4 +45,15 @@ function draw() {
     fruit.update();
     fruit.show();
   }
+  
+  push();
+  strokeWeight(10);
+  stroke(0);
+  line(mouseX, mouseY, mouseX - 100, mouseY - 250);
+  pop();
+
+  for (fruit of persimmon) {
+    fruit.touch();
+  }
+
 }
