@@ -22,7 +22,7 @@ function setup() {
 }
 
 function draw() {
-  background(220);
+  background("skyblue");
 
   let margin = 25;
   fill("#23A41A");
