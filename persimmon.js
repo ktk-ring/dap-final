@@ -1,10 +1,11 @@
 class Fruits {
-  constructor(x, y, r) {
+  constructor(x, y, r, g) {
     this.pos = createVector(x, y);
     this.vel = createVector();
     this.acc = createVector();
     this.r = r / 2;
     this.touched = false;
+    this.grounds = g;
   }
 
   touch() {
@@ -31,8 +32,8 @@ class Fruits {
       this.vel.x *= -0.8;
       this.acc.x *= -0.8;
     }
-    if (this.pos.y >= height - 50 - this.r) {
-      this.pos.y = height - 50 - this.r;
+    if (this.pos.y >= height - this.grounds - this.r) {
+      this.pos.y = height - this.grounds - this.r;
       this.vel.y *= -0.5;
       this.acc.y *= -0.5;
     }

@@ -35,7 +35,7 @@ function draw() {
     for (; x <= 325; x += w) {
       if (random() < 0.5) {
         fill(255, 165, 0);
-        persimmon.push(new Fruits(x, y, w));
+        persimmon.push(new Fruits(x, y, w, random(20, 150)));
       }
     }
     x = 50;
