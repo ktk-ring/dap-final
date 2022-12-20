@@ -1,11 +1,10 @@
+// images
 let tree;
 
-let x, y;
-x = 25;
-y = 25;
+// 10 print variables
+let x, y, w;
 
 let l = 0;
-let w = 50;
 let p = 0.5;
 
 function preload() {
@@ -15,25 +14,28 @@ function preload() {
 function setup() {
   createCanvas(displayWidth / 2.5, displayWidth / 3);
   background(220);
-  let margin = 25;
-  push();
   noStroke();
+  x = y = 50;
+  w = 100 / 3;
+
+  let margin = 25;
   fill("#23A41A");
   rect(0, height * 0.625, width, height * 0.375);
-  pop();
+
   image(tree, margin, margin / 2, (height * 0.75 - margin) / 3 * 2, (height * 0.75 - margin));
 }
 
 function draw() {
-  if (random() > p && y < height - 40) {
-    circle(x, y, 50, 50);
+  fill(255, 165, 0);
+  if (random() < 0.5 && y < 275) {
+    circle(x, y, w * 0.75);
   }
 
-  x = x + w;
+  x += w;
 
-  if (x > width - 25) {
+  if (x > 300) {
     y = y + w;
-    x = 25;
+    x = 50;
   }
 
 }
