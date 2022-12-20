@@ -25,6 +25,6 @@ class Riped extends Fruits {
     fill(255, 50, 0);
     ellipse(this.pos.x, this.pos.y, this.r * 2.25, this.r * 1.75);
     fill(50, 100, 50);
-    rect(this.pos.x-this.r*0.375, this.pos.y-10, this.r*0.75, this.r*0.5);
+    rect(this.pos.x - this.r * 0.375, this.pos.y - 10, this.r * 0.75, this.r * 0.5);
   }
 }

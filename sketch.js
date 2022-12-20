@@ -52,8 +52,9 @@ function draw() {
   }
 
   push();
-  strokeWeight(10);
-  stroke(0);
-  line(mouseX, mouseY, mouseX - 100, mouseY - 250);
+  strokeCap(SQUARE);
+  strokeWeight(25);
+  stroke(110, 50, 25);
+  line(mouseX+12.5, mouseY+25, mouseX - 125, mouseY - 250);
   pop();
 }
