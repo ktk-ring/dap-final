@@ -54,5 +54,7 @@ class Fruits {
   show() {
     fill(255, 165, 0);
     circle(this.pos.x, this.pos.y, this.r * 2);
+    fill(50, 100, 50);
+    rect(this.pos.x-this.r*0.375, this.pos.y-10, this.r*0.75, this.r*0.5);
   }
 }
