@@ -12,27 +12,26 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(displayWidth / 2.5, displayWidth / 3);
-  fruitCanvas = createGraphics(displayWidth / 2.5, displayWidth / 3);
+  createCanvas(windowWidth, windowWidth / 2.5);
+  fruitCanvas = createGraphics(windowWidth, windowWidth / 2.5);
   noStroke();
 
-  x = 50;
-  y = 50;
+  x = width / 2 - 125;
+  y = 175;
   w = 100 / 3;
 }
 
 function draw() {
   background("skyblue");
 
-  let margin = 25;
   fill("#23A41A");
   rect(0, height * 0.625, width, height * 0.375);
-  image(tree, margin, margin / 2, (height * 0.75 - margin) / 3 * 2, (height * 0.75 - margin));
+  image(tree, width / 2 - 150, 150, 300, 400);
 
   image(fruitCanvas, 0, 0);
 
-  for (; y < 275; y += w) {
-    for (; x <= 325; x += w) {
+  for (; y < 400; y += w) {
+    for (; x <= width / 2 + 125; x += w) {
       if (random() < 0.3) {
         if (random() < 0.75) {
           persimmon.push(new Fruits(x, y, w, random(20, 150)));
@@ -41,7 +40,7 @@ function draw() {
         }
       }
     }
-    x = 50;
+    x = width / 2 - 150;
   }
 
   for (fruit of persimmon) {
@@ -55,6 +54,6 @@ function draw() {
   strokeCap(SQUARE);
   strokeWeight(25);
   stroke(110, 50, 25);
-  line(mouseX+12.5, mouseY+25, mouseX - 125, mouseY - 250);
+  line(mouseX + 12.5, mouseY + 25, mouseX - 125, mouseY - 250);
   pop();
 }
