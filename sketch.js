@@ -26,7 +26,7 @@ function draw() {
 
   fill("#23A41A");
   rect(0, height * 0.625, width, height * 0.375);
-  image(tree, width / 2 - 150, 150, 300, 400);
+  image(tree, width / 2 - 150, height * 0.625-300, 300, 400);
 
   image(fruitCanvas, 0, 0);
 
