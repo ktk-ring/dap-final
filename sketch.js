@@ -17,7 +17,7 @@ function setup() {
   noStroke();
 
   x = width / 2 - 125;
-  y = 175;
+  y = height * 0.625 - 275;
   w = 100 / 3;
 }
 
@@ -26,11 +26,11 @@ function draw() {
 
   fill("#23A41A");
   rect(0, height * 0.625, width, height * 0.375);
-  image(tree, width / 2 - 150, height * 0.625-300, 300, 400);
+  image(tree, width / 2 - 150, height * 0.625 - 300, 300, 400);
 
   image(fruitCanvas, 0, 0);
 
-  for (; y < 400; y += w) {
+  for (; y < height * 0.625 - 50; y += w) {
     for (; x <= width / 2 + 125; x += w) {
       if (random() < 0.3) {
         if (random() < 0.75) {
