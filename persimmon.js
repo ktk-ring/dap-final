@@ -4,15 +4,20 @@ class Fruits {
     this.vel = createVector();
     this.acc = createVector();
     this.w = w;
+    this.touched = false;
   }
 
   touch() {
-    this.touched = createVector(mouseX - 50, mouseY - 250);
-    this.boundary = this.w/2;
-    if (this.touched.x >= this.pos.x - this.boundary && this.touched.x <= this.pos.x + this.boundary) {
-      if (this.touched.y >= this.pos.y - this.boundary && this.touched.y <= this.pos.y + this.boundary) {
-      gravity = createVector(0, 1);
-      this.vel.add(gravity);
+    this.touchVector = createVector(mouseX - 100, mouseY - 250);
+    this.boundary = this.w / 2;
+    if (this.touchVector.x >= this.pos.x - this.boundary && this.touchVector.x <= this.pos.x + this.boundary) {
+      if (this.touchVector.y >= this.pos.y - this.boundary && this.touchVector.y <= this.pos.y + this.boundary) {
+
+        if(this.touched != true) {
+          this.gravity = createVector(0, 3);
+          this.vel.add(this.gravity);
+          this.touched = true;
+        }
       }
     }
   }

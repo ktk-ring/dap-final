@@ -42,18 +42,16 @@ function draw() {
   }
 
   for (fruit of persimmon) {
+    fruit.touch();
     fruit.update();
     fruit.show();
   }
-  
+
   push();
   strokeWeight(10);
   stroke(0);
   line(mouseX, mouseY, mouseX - 100, mouseY - 250);
   pop();
 
-  for (fruit of persimmon) {
-    fruit.touch();
-  }
 
 }
