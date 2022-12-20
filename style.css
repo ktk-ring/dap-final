@@ -1,12 +1,12 @@
 @font-face {
-  font-family: 'Pretendard-Regular';
-  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-  font-weight: 400;
+  font-family: 'Pretendard-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+  font-weight: 700;
   font-style: normal;
 }
 
 * {
-  font-family: 'Pretendard-Regular';
+  font-family: 'Pretendard-Bold';
   width: auto;
   margin: auto;
   padding: 0;
