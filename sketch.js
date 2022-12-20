@@ -1,41 +1,35 @@
-// images
 let tree;
+let fruitC;
 
-// 10 print variables
-let x, y, w;
-
-let l = 0;
-let p = 0.5;
+let persimmon = new Persimmon(50, 50, 0.5);
 
 function preload() {
   tree = loadImage("data/tree.png");
 }
 
 function setup() {
-  createCanvas(displayWidth / 2.5, displayWidth / 3);
-  background(220);
+  w = displayWidth / 2.5;
+  h = displayWidth / 3;
+  createCanvas(w, h);
+  fruitCanvas = createGraphics(w, h);
   noStroke();
-  x = y = 50;
-  w = 100 / 3;
-
-  let margin = 25;
-  fill("#23A41A");
-  rect(0, height * 0.625, width, height * 0.375);
-
-  image(tree, margin, margin / 2, (height * 0.75 - margin) / 3 * 2, (height * 0.75 - margin));
 }
 
 function draw() {
-  fill(255, 165, 0);
-  if (random() < 0.5 && y < 275) {
-    circle(x, y, w * 0.75);
-  }
+  background(220);
+  let margin = 25;
+  fill("#23A41A");
+  rect(0, height * 0.625, width, height * 0.375);
+  image(tree, margin, margin / 2, (height * 0.75 - margin) / 3 * 2, (height * 0.75 - margin));
 
-  x += w;
+  image(fruitCanvas, 0, 0);
+  
+  push();
+  strokeWeight(10);
+  stroke(0);
+  line(mouseX, mouseY, mouseX - 10, mouseY - 100);
+  pop();
 
-  if (x > 300) {
-    y = y + w;
-    x = 50;
-  }
+  persimmon.fruit(fruitCanvas);
 
 }
